@@ -4,25 +4,26 @@
     <meta charset="UTF-8">
     <meta name="description" content="Weather information">
     <meta name="keywords" content="HTML, CSS, JavaScript, Weather">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>World Weather</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/default.css">
 </head>
 <body class="body">
 
-<header class="header">
-</header>
-
 <main class="main">
     <!--section with default city which name and temperature are displayed with large size-->
     <section class="default">
         <h2 class="section-name">Погода здесь</h2>
-        <button class="default__button">Обновить геолокацию</button>
-        <div class="city-weather city-weather-big">
-            <div class="city-info city-info_big">
-                <h3 class="city-info__name city-info__name_big">Saint Petersburg</h3>
-                <span class="city-info__temperature city-info__temperature_big">8°C</span>
-                <div class="city-info__icon city-info__icon_big">
+        <button class="default__button no-select">
+            <span class="default__update-name">Обновить геолокацию</span>
+            <img src="img/icons/update.svg" alt="">
+        </button>
+        <div class="city-weather city-weather_default">
+            <div class="city-info city-info_default">
+                <h3 class="city-info__name city-info__name_default">Saint Petersburg</h3>
+                <span class="city-info__temperature city-info__temperature_default">8°C</span>
+                <div class="city-info__icon city-info__icon_default">
                     <img src="img/weather/broken-clouds.svg" alt="">
                 </div>
             </div>
@@ -57,7 +58,7 @@
             <h2 class="section-name">Избранное</h2>
             <form action="" class="add-form">
                 <input placeholder="Добавить новый город" class="add-form__input">
-                <button class="round-button">+</button>
+                <button class="round-button no-select">+</button>
             </form>
         </div>
         <ul class="favorites__items">
@@ -70,7 +71,41 @@
                             <img src="img/weather/broken-clouds.svg" alt="">
                         </div>
                     </div>
-                    <button class="round-button">✕</button>
+                    <button class="round-button no-select">&#xd7;</button>
+                    <ul class="weather-info">
+                        <li class="weather-info__item">
+                            <span class="weather-info__feature">Ветер</span>
+                            <span class="weather-info__value">Moderate breeze, 6.0 m/s, North-northwest</span>
+                        </li>
+                        <li class="weather-info__item">
+                            <span class="weather-info__feature">Облачность</span>
+                            <span class="weather-info__value">Broken clouds</span>
+                        </li>
+                        <li class="weather-info__item">
+                            <span class="weather-info__feature">Давление</span>
+                            <span class="weather-info__value">1013 hpa</span>
+                        </li>
+                        <li class="weather-info__item">
+                            <span class="weather-info__feature">Влажность</span>
+                            <span class="weather-info__value">52%</span>
+                        </li>
+                        <li class="weather-info__item">
+                            <span class="weather-info__feature">Координаты</span>
+                            <span class="weather-info__value">[59.88, 30.42]</span>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="favorites__item">
+                <div class="city-weather city-weather_action_remove">
+                    <div class="city-info">
+                        <h3 class="city-info__name">Helsinki</h3>
+                        <span class="city-info__temperature">3°C</span>
+                        <div class="city-info__icon">
+                            <img src="img/weather/broken-clouds.svg" alt="">
+                        </div>
+                    </div>
+                    <button class="round-button no-select">&#xd7;</button>
                     <ul class="weather-info">
                         <li class="weather-info__item">
                             <span class="weather-info__feature">Ветер</span>
@@ -104,7 +139,41 @@
                             <img src="img/weather/broken-clouds.svg" alt="">
                         </div>
                     </div>
-                    <button class="round-button">✕</button>
+                    <button class="round-button no-select">&#xd7;</button>
+                    <ul class="weather-info">
+                        <li class="weather-info__item">
+                            <span class="weather-info__feature">Ветер</span>
+                            <span class="weather-info__value">Moderate breeze, 6.0 m/s, North-northwest</span>
+                        </li>
+                        <li class="weather-info__item">
+                            <span class="weather-info__feature">Облачность</span>
+                            <span class="weather-info__value">Broken clouds</span>
+                        </li>
+                        <li class="weather-info__item">
+                            <span class="weather-info__feature">Давление</span>
+                            <span class="weather-info__value">1013 hpa</span>
+                        </li>
+                        <li class="weather-info__item">
+                            <span class="weather-info__feature">Влажность</span>
+                            <span class="weather-info__value">52%</span>
+                        </li>
+                        <li class="weather-info__item">
+                            <span class="weather-info__feature">Координаты</span>
+                            <span class="weather-info__value">[59.88, 30.42]</span>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="favorites__item">
+                <div class="city-weather city-weather_action_remove">
+                    <div class="city-info">
+                        <h3 class="city-info__name">Helsinki</h3>
+                        <span class="city-info__temperature">3°C</span>
+                        <div class="city-info__icon">
+                            <img src="img/weather/broken-clouds.svg" alt="">
+                        </div>
+                    </div>
+                    <button class="round-button no-select">&#xd7;</button>
                     <ul class="weather-info">
                         <li class="weather-info__item">
                             <span class="weather-info__feature">Ветер</span>
@@ -138,7 +207,7 @@
                             <img src="img/weather/broken-clouds.svg" alt="">
                         </div>
                     </div>
-                    <button class="round-button">✕</button>
+                    <button class="round-button no-select">&#xd7;</button>
                     <ul class="weather-info">
                         <li class="weather-info__item">
                             <span class="weather-info__feature">Ветер</span>
@@ -172,75 +241,7 @@
                             <img src="img/weather/broken-clouds.svg" alt="">
                         </div>
                     </div>
-                    <button class="round-button">✕</button>
-                    <ul class="weather-info">
-                        <li class="weather-info__item">
-                            <span class="weather-info__feature">Ветер</span>
-                            <span class="weather-info__value">Moderate breeze, 6.0 m/s, North-northwest</span>
-                        </li>
-                        <li class="weather-info__item">
-                            <span class="weather-info__feature">Облачность</span>
-                            <span class="weather-info__value">Broken clouds</span>
-                        </li>
-                        <li class="weather-info__item">
-                            <span class="weather-info__feature">Давление</span>
-                            <span class="weather-info__value">1013 hpa</span>
-                        </li>
-                        <li class="weather-info__item">
-                            <span class="weather-info__feature">Влажность</span>
-                            <span class="weather-info__value">52%</span>
-                        </li>
-                        <li class="weather-info__item">
-                            <span class="weather-info__feature">Координаты</span>
-                            <span class="weather-info__value">[59.88, 30.42]</span>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li class="favorites__item">
-                <div class="city-weather city-weather_action_remove">
-                    <div class="city-info">
-                        <h3 class="city-info__name">Helsinki</h3>
-                        <span class="city-info__temperature">3°C</span>
-                        <div class="city-info__icon">
-                            <img src="img/weather/broken-clouds.svg" alt="">
-                        </div>
-                    </div>
-                    <button class="round-button">✕</button>
-                    <ul class="weather-info">
-                        <li class="weather-info__item">
-                            <span class="weather-info__feature">Ветер</span>
-                            <span class="weather-info__value">Moderate breeze, 6.0 m/s, North-northwest</span>
-                        </li>
-                        <li class="weather-info__item">
-                            <span class="weather-info__feature">Облачность</span>
-                            <span class="weather-info__value">Broken clouds</span>
-                        </li>
-                        <li class="weather-info__item">
-                            <span class="weather-info__feature">Давление</span>
-                            <span class="weather-info__value">1013 hpa</span>
-                        </li>
-                        <li class="weather-info__item">
-                            <span class="weather-info__feature">Влажность</span>
-                            <span class="weather-info__value">52%</span>
-                        </li>
-                        <li class="weather-info__item">
-                            <span class="weather-info__feature">Координаты</span>
-                            <span class="weather-info__value">[59.88, 30.42]</span>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li class="favorites__item">
-                <div class="city-weather city-weather_action_remove">
-                    <div class="city-info">
-                        <h3 class="city-info__name">Helsinki</h3>
-                        <span class="city-info__temperature">3°C</span>
-                        <div class="city-info__icon">
-                            <img src="img/weather/broken-clouds.svg" alt="">
-                        </div>
-                    </div>
-                    <button class="round-button">✕</button>
+                    <button class="round-button no-select">&#xd7;</button>
                     <ul class="weather-info">
                         <li class="weather-info__item">
                             <span class="weather-info__feature">Ветер</span>
