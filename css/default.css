@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); /* font for city and weather info*/
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap'); /* font for button math symbols */
 
 .no-select {
     -webkit-touch-callout: none; /* iOS Safari */
@@ -14,14 +14,27 @@
 .body {
     display: flex;
     justify-content: center;
-    padding: 12px 24px;
+    padding: 20px 25px;
+}
+
+@media (min-width: 768px) {
+    .body {
+        padding: 30px 75px;
+    }
 }
 
 .main {
     width: 100%;
     max-width: 500px;
     display: grid;
-    grid-row-gap: 20px;
+    grid-row-gap: 30px;
+}
+
+@media (min-width: 768px) {
+    .main {
+        max-width: 900px;
+        grid-row-gap: 50px;
+    }
 }
 
 .section-name {
@@ -30,8 +43,8 @@
 }
 
 .round-button {
-    height: 20px;
     width: 20px;
+    height: 20px;
     font: 12px 'Nanum Gothic', sans-serif;
     border: none;
     border-radius: 50%;
@@ -39,6 +52,10 @@
     color: white;
     outline: none;
     padding: 0;
+}
+
+.round-button:hover {
+    background-color: #7E7E7E;
 }
 
 /* ----------------------------------------------- */
@@ -53,6 +70,15 @@
             "city-weather city-weather";
 }
 
+@media (min-width: 768px) {
+    .default {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+                "section-name update-geo ."
+                "city-weather city-weather city-weather";
+    }
+}
+
 .default .section-name {
     grid-area: section-name;
     align-self: center;
@@ -64,6 +90,7 @@
     align-items: center;
     grid-area: update-geo;
     align-self: center;
+    justify-self: end;
     width: 40px;
     height: 25px;
     border: none;
@@ -73,13 +100,55 @@
     padding: 3px 5px;
 }
 
+.default__button:hover {
+    background-color: #6f8088;
+    color: white;
+}
+
 .default__button span {
     display: none;
+    color: #6a8387;
+}
+
+.default__button:hover span {
+    color: white;
 }
 
 .default__button img {
     width: 100%;
-    height: 100%
+    height: 100%;
+}
+
+.default__button:hover .update-icon,
+.default__button .update-icon_hover {
+    display: none;
+}
+
+.default__button:hover .update-icon_hover {
+    display: inline;
+}
+
+@media (min-width: 425px) {
+    .default__button {
+        width: fit-content;
+        height: fit-content;
+        padding: 10px 20px;
+    }
+
+    .default__button span {
+        display: inline;
+    }
+
+    .default__button .update-icon,
+    .default__button:hover .update-icon_hover {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .default__button {
+        justify-self: center;
+    }
 }
 
 .default .city-weather {
@@ -88,7 +157,13 @@
 
 .city-weather_default {
     grid-row-gap: 15px;
-    /*background-color: green;*/
+}
+
+@media (min-width: 768px) {
+    .city-weather_default {
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 50px;
+    }
 }
 
 .city-weather_default .city-info {
@@ -114,6 +189,24 @@
     width: 100px;
 }
 
+@media (min-width: 768px) {
+    .city-weather_default .city-info__name {
+        grid-area: city-name;
+        font-size: 25px;
+    }
+
+    .city-weather_default .city-info__temperature {
+        grid-area: weather-temperature;
+        align-self: center;
+        font-size: 75px;
+    }
+
+    .city-weather_default .city-info__icon {
+        grid-area: weather-icon;
+        width: 110px;
+    }
+}
+
 /* ----------------------------------------------- */
 
 .favorites {
@@ -123,7 +216,14 @@
 
 .favorites__header {
     display: grid;
-    grid-row-gap: 25px;
+    grid-row-gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .favorites__header {
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 50px;
+    }
 }
 
 .add-form {
@@ -159,6 +259,13 @@
 .favorites__items {
     display: grid;
     grid-gap: 25px;
+}
+
+@media (min-width: 768px) {
+    .favorites__items {
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 50px;
+    }
 }
 
 /* ----------------------------------------------- */
