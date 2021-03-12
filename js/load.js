@@ -115,7 +115,14 @@ fetch('data/city_list.json')
                 return;
             }
 
-            const matches = cities.filter(city => city.name.toLowerCase().startsWith(inputText.toLowerCase())).slice(0, 5);
+            let matches = cities.filter(city => city.name.toLowerCase().startsWith(inputText.toLowerCase()));
+            const seen = new Set();
+            matches = matches.filter(city => {
+                const isDuplicateCity = seen.has(city.name);
+                seen.add(city.name);
+                return !isDuplicateCity;
+            }).slice(0, 10);
+
             if (matches.length !== 0) {
                 autocompleteList.classList.remove('display-none');
             }
