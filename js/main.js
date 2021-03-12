@@ -24,7 +24,7 @@ function addFavItem(cityId, cityName) {
     favItems.appendChild(favItem);
     favItem = favItems.lastElementChild;
 
-    fetch(`http://api.openweathermap.org/data/2.5/weather?id=${cityId}&appid=${openWeatherApiKey}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?id=${cityId}&appid=${openWeatherApiKey}`)
         .then(response => response.json())
         .then(data => {
             const
@@ -36,7 +36,7 @@ function addFavItem(cityId, cityName) {
                 humidityVal = favItem.querySelector('.weather-info__humidity'),
                 coords = favItem.querySelector('.weather-info__coords');
 
-            changeSpinnerOnDataNode(weatherIcon, imageNode(`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`));
+            changeSpinnerOnDataNode(weatherIcon, imageNode(`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`));
             changeSpinnerOnDataNode(temperatureVal, textNode(`${Math.round(data.main.temp - 273.15)}°C`));
             changeSpinnerOnDataNode(windVal, textNode(`${data.wind.speed} meter/sec, ${windSpeedToBeaufortScale(data.wind.speed)}, ${degToDirection(data.wind.deg)}`));
             changeSpinnerOnDataNode(cloudinessVal, textNode(`${data.clouds.all}%, ${cloudinessToCondition(data.clouds.all)}`));
@@ -50,7 +50,7 @@ function setWeatherHere(cityCoords) {
     const lon = cityCoords.lon;
     const lat = cityCoords.lat;
 
-    fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${openWeatherApiKey}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${openWeatherApiKey}`)
         .then(response => response.json())
         .then(data => {
             const
@@ -63,7 +63,7 @@ function setWeatherHere(cityCoords) {
                 humidityVal = defaultItem.querySelector('.weather-info__humidity'),
                 coords = defaultItem.querySelector('.weather-info__coords');
 
-            weatherIcon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+            weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
             cityVal.textContent = data.name;
             temperatureVal.innerHTML = `${Math.round(data.main.temp - 273.15)}&deg;C`;
             windVal.textContent = `${data.wind.speed} meter/sec, ${windSpeedToBeaufortScale(data.wind.speed)}, ${degToDirection(data.wind.deg)}`;
