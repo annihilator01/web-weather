@@ -43,6 +43,9 @@ function addFavItem(cityId, cityName) {
             changeSpinnerOnDataNode(pressureVal, textNode(`${data.main.pressure} hPa`));
             changeSpinnerOnDataNode(humidityVal, textNode(`${data.main.humidity}%`));
             changeSpinnerOnDataNode(coords, textNode(`[${data.coord.lon}, ${data.coord.lat}]`));
+        })
+        .catch(err => {
+            showBadInternetPopup();
         });
 }
 
@@ -75,5 +78,8 @@ function setWeatherHere(cityCoords) {
             const cityWeatherElement = document.querySelector('.city-weather_default');
             removeSpinner(defaultItem);
             cityWeatherElement.classList.remove('display-none');
+        })
+        .catch(err => {
+            showBadInternetPopup();
         });
 }

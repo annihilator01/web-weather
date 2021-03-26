@@ -12,11 +12,22 @@
 </head>
 <body class="body">
 
+<div class="popup bad-internet display-none">
+    <div class="popup__content">
+        <div class="bad-internet__image">
+            <img src="img/icons/bad_internet.svg" alt="Bad Internet">
+        </div>
+        <p>No Internet connection</p>
+        <p>Try to reload the page</p>
+        <button class="bad-internet__reload-button text-button no-select">Reload</button>
+    </div>
+</div>
+
 <main class="main">
     <!--section with default city which name and temperature are displayed with large size-->
     <section class="default">
         <h2 class="section-name">Weather here</h2>
-        <button class="default__upd-geo-btn no-select">
+        <button class="default__upd-geo-btn text-button no-select">
             <span class="default__update-name">Update geolocation</span>
             <img class="update-icon" src="img/icons/update.svg" alt="">
             <img class="update-icon_hover" src="img/icons/update_hover.svg" alt="">

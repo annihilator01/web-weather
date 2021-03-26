@@ -119,3 +119,8 @@ function cloudinessToCondition(cloudiness) {
         }
     }
 }
+
+function showBadInternetPopup() {
+    badInternetPopup.classList.remove('display-none');
+    document.querySelector('html').style.overflow = 'hidden';
+}

@@ -13,6 +13,13 @@ for (const city of onLoadCities) {
     addFavItem(city.id, city.name);
 }
 
+// set bad internet popup click event
+const badInternetPopup = document.querySelector('.bad-internet');
+const badInternetReloadButton = document.querySelector('.bad-internet__reload-button');
+badInternetReloadButton.addEventListener('click', event => {
+    window.location.reload();
+});
+
 // prevent form from going to beginning of page after submitting
 const addButton = document.querySelector('.add-form__submit-button');
 addButton.addEventListener('click', event => {
